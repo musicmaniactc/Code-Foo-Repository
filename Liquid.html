@@ -1,0 +1,77 @@
+<html>
+<head>
+
+<script type="text/javascript">
+function printResolution()
+{
+	
+	if(window.innerWidth>0)
+	{
+		alert("\nBrowser Width: " + window.innerWidth + "  Height: " + window.innerHeight);
+	}
+	else if(document.documentElement.clientHeight != "undefined" && document.documentElement.clientHeight > 0)
+	{
+		alert("\nBrowser Width: " + document.documentElement.clientWidth + "  Height: " + document.documentElement.clientHeight);
+	}else
+	{
+		alert("\nBrowser Width: " + document.body.clientWidth + "  Height: " + document.body.clientHeight);
+	}
+}
+</script>
+
+<style type="text/css">
+#wrapper{width: 90%}
+#wrapper #mainText{padding-left: 20px; padding-right: 20px; text-align:center}
+#wrapper #rightBar{float: right; border-style: solid; padding-right: 10px; padding-left: 10px}
+#wrapper #leftBar{padding-right: 10px; padding-left: 10px; float: left; border-style: solid}
+#wrapper #infoBar{position: absolute; bottom: 0}
+#wrapper #head h1{text-align:center}
+#wrapper #mainText h2,#wrapper #content h2{text-align:center}
+#wrapper #footer{text-align:center; padding-left: 25%; padding-right: 25%}
+*{color:ColorGen}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+<div id="head"><h1>A Liquid Layout</h1>
+</div>
+<div id="leftBar">
+<ul>
+</li><a href="http://pc.ign.com">PC</a></li>
+<li><a href="http://gear.ign.com">Tech</a></li>
+<li><a href="http://ign.com">Main</a></li>
+</ul>
+</div>
+<div id="rightBar">
+<ul>
+</li><a href="http://code.ign.com/foo">Code Foo</a></li>
+<li><a href="http://www.ign.com/index/podcasts.html">Scoop!!!</a></li>
+<li><a href="http://ign.com">Greatest Website Ever</a></li>
+</ul>
+</div>
+<div id="mainText"><h2>by Taylor Cramer</h2>
+<p>Liquid layouts are extremely useful for web development in situations when the developer is not sure as to the specifics of the monitor size, window size or browser the web page will be viewed on. By structuring panels, labels, headers, and embedded objects based off of a percentage of the screen size, or adjusting said objects to better suit the viewing environment, it allows a developer to account for changes in the viewing environment. This can be seen on this webpage- scaling the window reduces the size of the various columns. A change in screen resolution will cause a different image to be drawn below, so as to not overfill smaller screens. It also tries multiple ways of detecting screen size so as to avoid compatibility issues with older versions of Internet Exporer.<p/>
+</div>
+<div id="footer">Thank you for taking the time to view my application to Code-Foo.
+<script type="text/javascript">
+if(screen.width>=1024 && screen.height>=768 && screen.width<1680 && screen.height<1050)
+{
+	document.write('<img src="http://covers.booktopia.com.au/big/978160/022/9781600221552.jpg" alt="Smiley Face Meduim" height="400" width="1000" />');
+}else if(screen.width>=1680 && screen.height>=1050)
+{
+	document.write('<img src="http://www.joemcgonigal.com/wp-content/uploads/2011/12/smiley-face1.jpg" alt="Smiley Face Large" height="800" width="1200" />');	
+}
+else
+{
+	alert("Sorry, no picture available for your screen resolution of " + screen.width + " by " + screen.height + ".");
+}
+</script>
+</div>
+<div id="infoBar">
+<form>
+<input type="button" value="Click For Window Resolution" onclick="printResolution()" />
+</form>
+</div>
+</body>
+</html>
